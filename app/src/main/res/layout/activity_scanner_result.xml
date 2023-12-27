@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_splash"
+        android:paddingTop="24dp">
+
+        <com.tqs.filecommander.ui.view.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleBar_left_src="@mipmap/ic_back"
+            app:titleBar_right_visible="gone"
+            app:titleBar_title_text="@string/tx_audio" />
+
+        <ImageView
+            android:id="@+id/iv_file_icon"
+            android:layout_width="157dp"
+            android:layout_height="118dp"
+            android:layout_marginRight="16dp"
+            android:src="@mipmap/ic_file_png"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+        <TextView
+            android:id="@+id/tv_file_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:text="@string/tx_audio"
+            android:textSize="@dimen/text_size_26"
+            app:layout_constraintBottom_toBottomOf="@id/iv_file_icon"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_bar"
+            app:layout_constraintTop_toTopOf="@id/iv_file_icon" />
+
+        <TextView
+            android:id="@+id/tv_file_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:text="@string/tx_select_all"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_file_title" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/v_file_ok"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="19dp"
+            android:background="@drawable/bg_scanner_ok"
+            android:text="@string/tx_ok"
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_file_icon" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/native_parent_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            <FrameLayout
+                android:id="@+id/native_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

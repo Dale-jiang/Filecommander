@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/bg_progressbar</item>
+    </style>
+    <style name="CustomProgressBarVideo" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/bg_progressbar_video</item>
+    </style>
+    <declare-styleable name="TitleBar">
+        <attr name="titleBar_title_text" format="string"/>
+        <attr name="titleBar_title_visible" >
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr>
+        <attr name="titleBar_title_color" format="reference|color"/>
+        <attr name="titleBar_title_size" format="float"/>
+
+        <attr name="titleBar_left_visible" >
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr>
+        <attr name="titleBar_left_src" format="reference|color"/>
+
+        <attr name="titleBar_right_visible" >
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+            <enum name="gone" value="2"/>
+        </attr>
+        <attr name="titleBar_right_src" format="reference|color"/>
+
+    </declare-styleable>
+</resources>

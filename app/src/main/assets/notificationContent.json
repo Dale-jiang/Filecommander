@@ -1,0 +1,20 @@
+{
+  "scenes": [
+    {
+      "name": "Scheduled",
+      "notification": "Scheduled cleaning task is ready! Tap to view and free up space, enhancing performance."
+    },
+    {
+      "name": "Unlock",
+      "notification": "Welcome back! New files need attention. Tap to clean now and ensure optimal phone performance."
+    },
+    {
+      "name": "Charge",
+      "notification": "Phone is charging. To boost charging efficiency, consider cleaning unnecessary files. Tap to check options."
+    },
+    {
+      "name": "Uninstall",
+      "notification": "You've just uninstalled an app. Want to clean related residual files? Tap to clean and keep your system tidy."
+    }
+  ]
+}

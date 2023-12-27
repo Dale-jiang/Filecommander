@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="24dp"
+    tools:context="com.tqs.filecommander.ui.activity.MainActivity">
+
+    <com.tqs.filecommander.ui.view.TitleBar
+        android:id="@+id/title_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:titleBar_left_src="@mipmap/ic_order"
+        app:titleBar_right_visible="gone"
+        app:titleBar_title_visible="gone" />
+
+    <include layout="@layout/content_main" />
+
+</LinearLayout>

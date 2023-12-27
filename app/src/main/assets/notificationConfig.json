@@ -1,0 +1,28 @@
+{
+  "fcpop_switch":0,
+  "fcreffer":2,
+  "fc_t":{
+    "open":1,
+    "f":5,
+    "limit":1,
+    "interval":10
+  },
+  "fc_unl":{
+    "open":1,
+    "f":5,
+    "limit":1,
+    "interval":10
+  },
+  "fc_char":{
+    "open":1,
+    "f":5,
+    "limit":1,
+    "interval":10
+  },
+  "fc_uni":{
+    "open":1,
+    "f":5,
+    "limit":1,
+    "interval":10
+  }
+}
