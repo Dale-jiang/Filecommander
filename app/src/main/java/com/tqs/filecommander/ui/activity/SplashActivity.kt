@@ -24,7 +24,9 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, MainVM>() {
         initAdsData()
         TimerUtils.startCountDownTimer(viewModel.countDownTime, {
             binding.splashProgressBar.progress = 100 - (it / 80).toInt()
-            checkAds()
+            if (binding.splashProgressBar.progress>=25){
+                checkAds()
+            }
         }) { startMainActivity() }
 
         TBAHelper.updatePoints(EventPoints.filec_startpage_show)
