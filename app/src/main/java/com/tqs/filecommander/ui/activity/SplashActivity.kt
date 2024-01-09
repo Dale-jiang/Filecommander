@@ -9,6 +9,7 @@ import com.tqs.filecommander.databinding.ActivitySplashBinding
 import com.tqs.filecommander.tba.EventPoints
 import com.tqs.filecommander.tba.TBAHelper
 import com.tqs.filecommander.utils.TimerUtils
+import com.tqs.filecommander.utils.UMPSDKHelper
 import com.tqs.filecommander.vm.MainVM
 
 class SplashActivity : BaseActivity<ActivitySplashBinding, MainVM>() {
@@ -21,13 +22,21 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, MainVM>() {
         setStatusBarTransparent(this)
         setStatusBarLightMode(this, true)
         viewModel = ViewModelProvider(this)[MainVM::class.java]
-        initAdsData()
+
         TimerUtils.startCountDownTimer(viewModel.countDownTime, {
-            binding.splashProgressBar.progress = 100 - (it / 80).toInt()
-            if (binding.splashProgressBar.progress>=25){
+            binding.splashProgressBar.progress = 100 - (it / 100).toInt()
+        }) {}
+
+        UMPSDKHelper.initUMPSDK(this) {
+            initAdsData()
+            val process = binding.splashProgressBar.progress
+            TimerUtils.startCountDownTimer(process * 100L, {
+                binding.splashProgressBar.progress = process + 100 - (it / 100).toInt()
                 checkAds()
-            }
-        }) { startMainActivity() }
+            }) { startMainActivity() }
+
+        }
+
 
         TBAHelper.updatePoints(EventPoints.filec_startpage_show)
         TBAHelper.updatePoints(EventPoints.filec_launch_page_show)
@@ -35,12 +44,12 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, MainVM>() {
 
     private fun checkAds() {
         if (AdsManager.adsFullScreen.isCacheNotEmpty) {
-            binding.splashProgressBar.progress = 100
             TimerUtils.stopCountDownTimer()
             AdsManager.adsFullScreen.showFullScreenAds(this@SplashActivity) {
                 Log.e(TAG, "ads onDismiss")
                 startMainActivity()
             }
+            binding.splashProgressBar.progress = 100
         }
     }
 

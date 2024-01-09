@@ -44,7 +44,7 @@ class MainVM : BaseVM() {
 
     var currentIndex = 0
     var baseAds: BaseAds? = null
-    val countDownTime = 8 * 1000L
+    val countDownTime = 10 * 1000L
     var deletedFile = MutableLiveData<Boolean>(false)
     var mPageType: String = Common.IMAGE_LIST
 

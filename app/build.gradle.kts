@@ -101,7 +101,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
     // admob of google
     implementation("com.google.android.gms:play-services-ads:22.4.0")
-    implementation("com.google.android.ump:user-messaging-platform:2.1.0")
+//    implementation("com.google.android.ump:user-messaging-platform:2.1.0")
     // mmkv of tecent
     implementation("com.tencent:mmkv:1.2.14")
     implementation("com.blankj:utilcodex:1.31.0")
@@ -131,4 +131,7 @@ dependencies {
     implementation("com.google.android.gms:play-services-ads-identifier:18.0.1")
     //facebook
     implementation("com.facebook.android:facebook-android-sdk:12.3.0")
+    //Google User Messaging Platform SDK
+    implementation("com.google.android.ump:user-messaging-platform:2.1.0")
+
 }

@@ -39,4 +39,7 @@ object MMKVHelper : MMKVOwner(mapId = "fileCommander") {
 
     var GaId by mmkvString(default = "")
     var isLimitAdTrackingEnabled by mmkvBoolean(default = false)
+
+    var  authorization by mmkvBoolean(true)
+    var  authorizationTime by mmkvLong(0L)
 }

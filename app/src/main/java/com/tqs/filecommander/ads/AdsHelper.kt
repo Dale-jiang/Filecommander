@@ -95,7 +95,7 @@ class AdsHelper(private val adsType: AdsItemType) {
         contentView.addView(customView)
 
         activity.lifecycleScope.launch {
-            delay(1000)
+            delay(500)
             TBAHelper.updatePoints(
                 EventPoints.filec_ad_chance,
                 mutableMapOf(EventPoints.ad_pos_id to adsType.adsItemType)

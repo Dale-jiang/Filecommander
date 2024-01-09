@@ -3,6 +3,7 @@ package com.tqs.filecommander
 import android.app.Application
 import android.content.Intent
 import android.os.Build
+import com.google.android.gms.ads.MobileAds
 import com.tencent.mmkv.MMKV
 import com.tqs.filecommander.ads.AdsManager
 import com.tqs.filecommander.broadcast.registerBattery
@@ -10,7 +11,6 @@ import com.tqs.filecommander.broadcast.registerUninstall
 import com.tqs.filecommander.broadcast.registerUnlock
 import com.tqs.filecommander.cloak.CloakHelper
 import com.tqs.filecommander.mmkv.MMKVHelper
-import com.tqs.filecommander.net.RemoteHelper
 import com.tqs.filecommander.notification.NotificationController
 import com.tqs.filecommander.referrer.ReferrerHelper
 import com.tqs.filecommander.service.ForeService
@@ -29,6 +29,7 @@ class FileCommanderApp : Application() {
         application = this
         AdsManager.initAdsConfig(defaultJson)
         MMKV.initialize(this)
+        MobileAds.initialize(this)
         NotificationController.initNotificationConfig(this)
         ReferrerHelper.initReferrer(this)
         TBAHelper.getAds { id, bool ->
@@ -39,9 +40,9 @@ class FileCommanderApp : Application() {
         }
 //        FirebaseApp.initializeApp(this)
         if (BuildConfig.DEBUG.not())
-           // RemoteHelper.fetch()
+        // RemoteHelper.fetch()
 //        startService()
-        registerBroadcast()
+            registerBroadcast()
         timerPoints()
         if (0L == MMKVHelper.firstLaunchAppTime) {
             MMKVHelper.firstLaunchAppTime = System.currentTimeMillis()
